@@ -9,7 +9,7 @@
       }
     },
     "condition": {
-      "regexFilter": "^https://devast\\.io/js/[A-Za-z0-9_-]+\\.js(?:\\?.*)?$",
+      "urlFilter": "|https://devast.io/js/",
       "resourceTypes": [
         "script"
       ]
