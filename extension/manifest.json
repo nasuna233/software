@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Source Client Loader",
+  "version": "1.0.0",
+  "description": "Loads the current source client on devast.io.",
+  "host_permissions": [
+    "https://software-shldv.vercel.app/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://devast.io/*",
+        "https://www.devast.io/*"
+      ],
+      "js": [
+        "loader.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
