@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "gamesenseloader",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Loads the current source client on devast.io.",
   "icons": {
     "16": "icon-16.png",
@@ -9,19 +9,20 @@
     "48": "icon-48.png",
     "128": "icon-128.png"
   },
+  "permissions": [
+    "declarativeNetRequest"
+  ],
   "host_permissions": [
+    "https://devast.io/js/*",
     "https://software-shldv.vercel.app/*"
   ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://devast.io/*",
-        "https://www.devast.io/*"
-      ],
-      "js": [
-        "loader.js"
-      ],
-      "run_at": "document_start"
-    }
-  ]
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "client_redirect",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
 }
